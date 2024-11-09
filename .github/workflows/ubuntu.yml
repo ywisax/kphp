@@ -1,9 +1,7 @@
 name: ubuntu
 
 on:
-  push:
-    branches:
-    - master
+  workflow_dispatch:
 
 env:
   kphp_root_dir: /home/kitten/kphp
