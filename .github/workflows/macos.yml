@@ -51,6 +51,9 @@ jobs:
         $GITHUB_WORKSPACE/objs/bin/kphp2cpp --cxx ${{matrix.compiler}} demo.php
         kphp_out/server -o
 
+    - name: Verify kphp2cpp file existence
+      run: ls -l $GITHUB_WORKSPACE/objs/bin/
+
     - name: Upload kphp2cpp as artifact
       uses: actions/upload-artifact@v3
       with:
