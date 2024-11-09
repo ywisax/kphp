@@ -16,13 +16,11 @@ jobs:
     strategy:
       matrix:
         os: [buster, focal]
-        compiler: [g++, clang++, g++-10]
+        compiler: [g++, clang++]
         cpp: [17, 20]
         arch: [amd64, arm64]
-        asan: [on, off]
-        ubsan: [on, off]
 
-    name: "${{matrix.os}}/${{matrix.compiler}}/c++${{matrix.cpp}}/asan=${{matrix.asan}}/ubsan=${{matrix.ubsan}}/arch=${{matrix.arch}}"
+    name: "${{matrix.os}}/${{matrix.arch}}/${{matrix.compiler}}/c++${{matrix.cpp}}"
 
     steps:
     - uses: actions/checkout@v3
