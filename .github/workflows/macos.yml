@@ -54,8 +54,8 @@ jobs:
     - name: Verify kphp2cpp file existence
       run: ls -l $GITHUB_WORKSPACE/objs/bin/
 
-    - name: Upload kphp2cpp as artifact
+    - name: Upload binaries as artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: kphp2cpp
-        path: $GITHUB_WORKSPACE/objs/bin/kphp2cpp
+        name: binaries
+        path: ${{github.workspace}}/objs/bin/*
