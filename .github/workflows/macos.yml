@@ -1,9 +1,7 @@
 name: macos
 
 on:
-  push:
-    branches:
-    - master
+  workflow_dispatch:
 
 env:
   HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: true
@@ -52,6 +50,7 @@ jobs:
         echo 'hello world' > demo.php 
         $GITHUB_WORKSPACE/objs/bin/kphp2cpp --cxx ${{matrix.compiler}} demo.php
         kphp_out/server -o
+
     - name: Upload kphp2cpp as artifact
       uses: actions/upload-artifact@v3
       with:
