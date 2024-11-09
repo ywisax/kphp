@@ -52,3 +52,8 @@ jobs:
         echo 'hello world' > demo.php 
         $GITHUB_WORKSPACE/objs/bin/kphp2cpp --cxx ${{matrix.compiler}} demo.php
         kphp_out/server -o
+    - name: Upload kphp2cpp as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: kphp2cpp
+        path: $GITHUB_WORKSPACE/objs/bin/kphp2cpp
